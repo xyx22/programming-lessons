@@ -1,8 +1,20 @@
-a = "example" # 1
-print(a[:]) # всю строку
-print(a[0]) # 2
-print(a[-1]) # 3
-print(a[4:]) # 4
-print(a[::-1]) # 5
-print(a[::-1][2])
-print(a[0:7:2]) # 6
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+not_primes = []
+primes = []
+for number in numbers:
+    if number < 2:
+        continue
+
+    is_prime = True
+
+    for div in range(2, number):
+        if number % div == 0:
+            is_prime = False
+            break
+    if is_prime:
+        primes.append(number)
+    else:
+        not_primes.append(number)
+
+print(not_primes)
+print(primes)
